@@ -41,12 +41,12 @@ a {
 .visually-hidden {
 	display: none;
 }
-card-category {
+.card-category {
 	color: var(--color-primary);
 }
 .section-header {
 	text-align: var(--section-header-align);
 }
-section-tagline {
+.section-tagline {
 	color: var(--color-primary);
 }
