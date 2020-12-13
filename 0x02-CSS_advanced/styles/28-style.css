@@ -92,7 +92,7 @@ body {
 .header-logo {
 	position: var(--header-logo-position);
 }
-.header-logo a {
+.header-logo a:link {
 	display: var(--header-logo-link-display);
 	position: var(--header-logo-link-position);
 	top: var(--header-logo-link-top);
@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------- */
 /* Anchor/Link CSS */
 /* --------------- */
-a {
+a:link {
 	color: var(--text-color);
 	text-decoration: none;
 }
@@ -141,7 +141,7 @@ a:active {
 .card-services > .card-title {
 	margin: 0;
 }
-.card-services a {
+.card-services a:link {
 	display: block;
 	padding: 2rem;
 	background-color: var(--color-light-grey);

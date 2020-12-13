@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------- */
 /* Anchor/Link CSS */
 /* --------------- */
-a {
+a:link {
 	color: var(--text-color);
 	text-decoration: none;
 }
@@ -110,7 +110,7 @@ a:active {
 .card-services > .card-title {
 	margin: 0;
 }
-.card-services a {
+.card-services a:link {
 	display: block;
 	padding: 2rem;
 	background-color: var(--color-light-grey);
