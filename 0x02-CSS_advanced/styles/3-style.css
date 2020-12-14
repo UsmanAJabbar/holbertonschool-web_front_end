@@ -12,7 +12,7 @@ html {
 body {
 	color: var(--text-color);
 }
-a:link {
+a {
 	color: var(--text-color);
 }
 .visually-hidden {
