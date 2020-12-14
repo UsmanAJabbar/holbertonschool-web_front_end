@@ -42,7 +42,7 @@ a:link {
 .visually-hidden {
 	display: none;
 }
-card-category {
+.card-category {
 	color: var(--color-primary);
 }
 .section-header {

@@ -104,7 +104,7 @@ a:active {
 /* -------- */
 /* Card CSS */
 /* -------- */
-.card-category {
+..card-category {
 	color: var(--color-primary);
 }
 .card-services > .card-title {
