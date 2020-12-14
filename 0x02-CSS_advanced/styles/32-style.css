@@ -182,7 +182,7 @@ a:active {
 	top: -0.1rem;
 	left: -0.1rem;
 	right: -0.1rem;
-	z-order: -1;
+	z-order: 1;
 }
 .card-work:hover .card-inner {
 	background-color: rgba(0, 0, 0, 0.7);
