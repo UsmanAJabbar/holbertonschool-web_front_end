@@ -139,7 +139,7 @@ a:active {
 .card-category {
 	color: var(--color-primary);
 }
-.card-services > .card-title {
+.card-services .card-title {
 	margin: 0;
 }
 .card-services a:link {
@@ -155,12 +155,12 @@ a:active {
 .card-testimonial {
 	text-align: center;
 }
-.card-testimonial > .card-avatar {
+.card-testimonial .card-avatar {
 	border-radius: 50%;
 	width: 10rem;
 	height: 10rem;
 }
-.card-testimonial > .card-quote cite {
+.card-testimonial .card-quote cite {
 	display: block;
 	padding-top: 1rem;
 	color: var(--color-primary);
