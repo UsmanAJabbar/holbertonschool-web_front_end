@@ -218,7 +218,7 @@ a:active {
 	left: -1rem;
 	color: #efeded;
 	font-size: 10rem;
-	z-order: 1;
+	z-order: -1;
 }
 /* ----------- */
 /* Section CSS */
