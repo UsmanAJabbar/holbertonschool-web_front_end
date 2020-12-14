@@ -4,13 +4,13 @@ html {
 body {
 	color: #161616;
 }
-a:link {
+a {
 	color: #161616;
 }
 .visually-hidden {
 	display: none;
 }
-..card-category {
+.card-category {
 	color: #D73953;
 }
 .section-tagline {
