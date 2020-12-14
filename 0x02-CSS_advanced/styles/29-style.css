@@ -36,7 +36,7 @@
 	--nav-item-letter-spacing: 4%;
 	--nav-item-display: inline-block;
 	--nav-item-margin: 0 0 3rem 0;
-	--nav-item-link-hover: var(--color-primary);
+	--nav-item-link-hover: var(--color-white);
 	--section-tagline-margin: 0;
 	--button-display: inline-block;
 	--button-padding: 1.5rem 3rem;
@@ -235,7 +235,7 @@ a:active {
 	list-style-type: none;
 	text-align: center;
 }
-.nav > .nav-item {
+.nav .nav-item {
 	font-family: var(--nav-item-font-family);
 	font-weight: var(--nav-item-font-weight);
 	font-size: var(--nav-item-font-size);
@@ -250,7 +250,19 @@ a:active {
 .nav .nav-link:hover {
 	color: var(--nav-item-link-hover);
 }
-
+.nav .nav-link::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: var(--color-white);
+	width: 0;
+	height: 0.2rem;
+}
+.nav .nav-item:hover .nav-link::before {
+	background-color: var(--color-primary);
+	width: 100%;
+}
 /* ------- */
 /* Row CSS */
 /* ------- */
