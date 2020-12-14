@@ -38,10 +38,6 @@ body {
 	color: var(--text-color);
 	line-height: var(--line-height-base);
 }
-.container {
-	width: 960px;
-	margin: 0 auto;
-}
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family-title);
 	font-weight: var(--font-weight-bold);
@@ -62,7 +58,7 @@ a:active {
 .visually-hidden {
 	display: none;
 }
-card-category {
+.card-category {
 	color: var(--color-primary);
 }
 .section-header {
@@ -80,4 +76,8 @@ card-category {
 	font-weight: var(--font-weight-bold);
 	text-transform: var(--section-tagline-transform);
 	color: var(--color-primary);
+}
+.container {
+	width: 960px;
+	margin: 0 auto;
 }
