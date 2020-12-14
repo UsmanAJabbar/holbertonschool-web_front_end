@@ -33,14 +33,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family-title);
 	font-weight: var(--font-weight-bold);
 }
-a:link {
+a {
 	color: var(--text-color);
 	text-decoration: none;
 }
 .visually-hidden {
 	display: none;
 }
-..card-category {
+.card-category {
 	color: var(--color-primary);
 }
 .section-tagline {
