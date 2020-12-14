@@ -58,7 +58,7 @@
 /* ------------- */
 /* Universal CSS */
 /* ------------- */
-* {
+*, *:before, *:after {
 	box-sizing: border-box;
 }
 
@@ -136,7 +136,7 @@ a:active {
 /* -------- */
 /* Card CSS */
 /* -------- */
-..card-category {
+.card-category {
 	color: var(--color-primary);
 }
 .card-services > .card-title {
