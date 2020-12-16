@@ -1,0 +1,9 @@
+/* SASS file that sets the text color based off a variable */
+$text-color: #3D3D3D;
+
+body {
+  color: $text-color;
+}
+p {
+  color: $text-color;
+}
