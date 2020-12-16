@@ -1,0 +1,11 @@
+/* Task that emphases the ease of use of a mixin function */
+@mixin margin_setter($margin_px) {
+	margin-left:	$margin_px;
+	margin-right:	$margin_px;
+}
+body {
+	@include margin_setter(10px);
+}
+div {
+	@include margin_setter(15px);
+}
