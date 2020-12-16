@@ -1,0 +1,7 @@
+/* Task that nests class and targets its direct children */
+body {
+	color: #3D3D3D;
+	> .red {
+		color: #FF0000;
+	}
+}
