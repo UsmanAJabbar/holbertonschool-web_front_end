@@ -1,0 +1,7 @@
+/* Task that targets the hover state of a button */
+button {
+	color: #FF0000;
+	&:hover {
+		color: #00FF00;
+	}
+}
