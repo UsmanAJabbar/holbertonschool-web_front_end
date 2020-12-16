@@ -1,0 +1,15 @@
+/* Task the demos the use of extended in SASS */
+%templated_styles {
+	font-size: 12px;
+}
+.info {
+	@extend %templated_styles;
+}
+.success {
+	@extend %templated_styles;
+	color: #00FF00;
+}
+.warning {
+	@extend %templated_styles;
+	color: #FF0000;
+}
