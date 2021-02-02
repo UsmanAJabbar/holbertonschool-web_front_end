@@ -1,0 +1,50 @@
+/*
+	===========================
+	This style file is meant to override
+	Bootstrap's default CSS styles
+	===========================
+*/
+:root {
+	--color-red-primary: #E0003C;
+	--color-red-secondary:	#BC1340;
+}
+
+/* Button Primary CSS */
+.btn-primary {
+	background-color: var(--color-red-primary);
+	border-color: var(--color-red-primary); /* <- Additional CSS to comply with design */
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	background-color: var(--color-red-secondary);
+}
+.btn-outline-primary {
+	color: var(--color-red-primary);
+	border-color: var(--color-red-primary);
+}
+.btn-outline-primary:hover, .btn-outline-primary:not(:disabled):not(.disabled):active {
+	background-color: var(--color-red-primary);
+	border-color: var(--color-red-primary);
+}
+.btn-outline-primary:focus {
+	box-shadow: unset;
+}
+a, a:hover, a:focus {
+	color: var(--color-red-primary) !important;
+}
+
+/* Card CSS */
+[class^="card"] {
+	border-color: var(--color-red-primary);
+	border-radius: 1rem;
+	overflow: hidden;
+}
+.card-header {
+	/* Additional CSS to comply with concept design */
+	background-color: var(--color-red-primary);
+	color: white;
+}
+
+/* Custom Text CSS */
+.text-muted {
+	color: #8c8c8c!important;
+}
