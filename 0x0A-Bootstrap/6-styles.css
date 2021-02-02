@@ -28,6 +28,8 @@
 .btn-outline-primary:focus {
 	box-shadow: unset;
 }
+
+/* Link CSS */
 a, a:hover, a:focus {
 	color: var(--color-red-primary) !important;
 }
