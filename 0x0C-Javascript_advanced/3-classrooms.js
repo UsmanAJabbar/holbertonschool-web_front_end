@@ -7,13 +7,19 @@
 */
 function createClassRoom (numbersOfStudents) {
 	function studentSeat(seat) {
-		return seat;
+		return () => {
+			return seat;
+		}
 	}
-
+	let students = [];
 	let i = 0;
-	for (i = 0; i < numbersOfStudents; i++) {
-		students[i] = i + 1;
+	for (;i < numbersOfStudents; i++) {
+		students[i] = studentSeat(i + 1);
 	}
 	
-	return studentSeat;
+	return students;
 }
+let classRoom = createClassRoom(10);
+console.log(classRoom[0]());
+console.log(classRoom[3]());
+console.log(classRoom[9]());
