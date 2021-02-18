@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Task 3</title>
+        <title>Task 5</title>
 		<script
 		       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 			   integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -26,12 +26,14 @@
 			addNewMember = (firstName, lastName) => {
 				$('tbody').append(
 					$('<tr>').append(
-						$('<td>').text(firstName),
-						$('<td>').text(lastName),
-						$('<td>', {
-							text: "(x)",
-							click: () => { $(this).closest('tr').remove(); },
-						}).css("background-color", "orange")
+					$('<td>').text(firstName),
+					$('<td>').text(lastName),
+					$('<td>', {
+						text: "(x)",
+						click: function() {
+							$(this).parent().remove();
+						},
+					}).css("background-color", "orange")
 					)
 				)
 			}
