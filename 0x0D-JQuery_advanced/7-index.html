@@ -22,19 +22,20 @@
 								queryWikipedia( $("input[type=text]").val() );
 							}
 						}),
-						$('ul')
+						$('<ul>')
 					)
 				)
 			}
 			addNewArticle = (id, title, snippet) => {
+				console.log(id, title, snippet);
 				$('ul').append(
-					$('li').append(
-						$('p').append(
+					$('<li>').append(
+						$('<p>').append(
 							$('<span>', {text: `${id} -`}).append(
 								$('<b>').text(title)
 							)
 						),
-						$('p').text(snippet)
+						$('<p>').append(snippet)
 					)
 				)
 			}
@@ -48,20 +49,23 @@
 					format: "json"
 				}
 
-				Object.entries(parameters).forEach( (key, values) => {
+				Object.entries(parameters).forEach( ( [key, values] ) => {
 					url += `&${key}=${values}`;
 				});
+
+				console.log(url);
 
 				$.ajax({
 					url: url,
 					type: 'GET',
 					data: parameters,
 					dataType: 'json',
-				}).done( () => {
+				}).done( (response) => {
 					$.each(response['query']['search'], (index, data) => {
 						addNewArticle( data['pageid'], data['title'], data['snippet'] );
 					})
 				});
+				return false;
 			}
 			$(document).ready( () => {
 				createSearchForm();
