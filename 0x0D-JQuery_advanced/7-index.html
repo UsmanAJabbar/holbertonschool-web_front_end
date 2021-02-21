@@ -18,7 +18,8 @@
 						}),
 						$('<input>', {
 							type: "submit",
-							click: () => {
+							click: (e) => {
+								e.preventDefault()
 								queryWikipedia( $("input[type=text]").val() );
 							}
 						}),
