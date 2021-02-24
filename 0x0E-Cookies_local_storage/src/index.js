@@ -11,7 +11,8 @@ setCookies = () => {
 
 	document.cookie = `firstname=${firstname}`;
 	document.cookie = `email=${email}`;
-	document.cookie = `Expires=${expiry}`;
+	document.cookie = `expires=${expiry}`;
+	document.cookie = `path=/`;
 }
 showCookies = () => {
 
@@ -41,3 +42,59 @@ getCookie = (name) => {
 	}
 	return "";
 }
+showForm = () => {
+	let form = document.getElementById('login-form');
+	let loggedIn = document.getElementById('logged-in');
+
+	if (loggedIn)
+		loggedIn.remove();
+
+	form.style.display = 'block';
+}
+hideForm = () => {
+	let form = document.getElementById('login-form');
+	form.style.display = 'None';
+}
+
+deleteCookiesAndShowForm = () => {
+	let reset = new Date();
+	reset.setTime(0);
+	reset = reset.toUTCString();
+
+	document.cookies = `expires=${reset}`;
+
+	showForm();
+}
+showWelcomeMessageOrForm = () => {
+	if (!document.cookie)
+		console.log('here'), showForm();
+	else {
+		hideForm();
+		/*  DOM OPERATIONS  */
+		let loggedInContainer = document.createElement('div');
+		loggedInContainer.id = 'logged-in';
+
+		let welcomeMessage = document.createElement('h1');
+		let firstname = getCookie('firstname');
+		welcomeMessage.innerHTML = `Welcome ${firstname}`
+
+		let logout = document.createElement('a');
+		logout.innerHTML = '(logout)';
+		logout.href = '#';
+		logout.onclick = 'deleteCookiesAndShowForm()';
+		logout.style.color = 'black';
+		logout.style.fontWeight = 'normal';
+		logout.style.fontStyle = 'italic';
+		logout.style.marginLeft = '10px';
+		logout.style.textDecoration = 'None';
+
+		welcomeMessage.append(logout);
+		loggedInContainer.append(welcomeMessage);
+		document.body.append(loggedInContainer);
+		// document.body.append(
+		// 	loggedInContainer.append(
+		// 		welcomeMessage.append(logout)
+		// ));
+	}
+}
+showWelcomeMessageOrForm();
