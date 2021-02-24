@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task 4</title>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<script type="application/javascript">
+			setCookies = () => {
+				let firstname = document.getElementById("firstname").value;
+				let email = document.getElementById("email").value;
+				let std_cookies = {
+					path: '/',
+					expires: 10
+				}
+				Cookies.set('firstname', firstname, std_cookies);
+				Cookies.set('email', email, std_cookies);
+			}
+			showCookies = () => {
+
+				/* Clear the only paragraph tag if it exists */
+				if( document.querySelector('p') != null )
+					document.querySelector('p').remove();
+
+				let cookies = document.cookie.split('; ');
+				let p = document.createElement("p");
+
+				let cookieJar = {}
+				for (pears of cookies)
+					cookieJar[ pears.split('=')[0] ] = pears.split('=')[1];
+
+				p.innerHTML = `Email: ${cookieJar['email']} - Firstname: ${cookieJar['firstname']}`;
+				document.body.append(p);
+			}
+			getCookie = (name) => {
+				Cookies.get(name);
+			}
+			showForm = () => {
+				let form = document.getElementById('login-form');
+				let loggedIn = document.getElementById('logged-in');
+
+				if (loggedIn)
+					loggedIn.remove();
+
+				form.style.display = 'block';
+			}
+			hideForm = () => {
+				let form = document.getElementById('login-form');
+				form.style.display = 'None';
+			}
+			deleteCookiesAndShowForm = () => {
+				let reset = new Date();
+				reset.setTime(0);
+				reset = reset.toUTCString();
+
+				Cookies.remove('firstname');
+				Cookies.remove('email');
+
+				showForm();
+			}
+			showWelcomeMessageOrForm = () => {
+				if (!document.cookie)
+					showForm();
+				else {
+					hideForm();
+					/*  DOM OPERATIONS  */
+					let loggedInContainer = document.createElement('div');
+					loggedInContainer.id = 'logged-in';
+
+					let welcomeMessage = document.createElement('h1');
+					let firstname = Cookies.get('firstname');
+					welcomeMessage.innerHTML = `Welcome ${firstname}`
+
+					let logout = document.createElement('a');
+					logout.innerHTML = '(logout)';
+					logout.href = '#';
+					logout.onclick = 'deleteCookiesAndShowForm()';
+					logout.style.color = 'black';
+					logout.style.fontWeight = 'normal';
+					logout.style.fontStyle = 'italic';
+					logout.style.marginLeft = '10px';
+					logout.style.textDecoration = 'None';
+
+					welcomeMessage.append(logout);
+					loggedInContainer.append(welcomeMessage);
+					document.body.append(loggedInContainer);
+				}
+			}
+			setCookiesAndShowWelcomeMessage = () => {
+				setCookies();
+				showWelcomeMessageOrForm();
+			}
+			setCookiesAndShowWelcomeMessage();
+		</script>
+	</head>
+	<body>
+		<div id="login-form">
+			<h2>Login to the website</h2>
+			<input type="text" name="Firstname" id="firstname" placeholder="Firstname">
+			<input type="text" name="Email" id="email" placeholder="email">
+			<button type="submit" onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+		</div>
+
+		<footer>
+		</footer>
+	</body>
+</html>
