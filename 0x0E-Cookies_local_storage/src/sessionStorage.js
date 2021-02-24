@@ -17,7 +17,7 @@ createStore = () => {
 }
 displayCart = () => {
 	if (window.sessionStorage) {
-		let numItems = window.sessionStorage.length;
+		let numItems = window.sessionStorage.length - 1;
 		let p = document.createElement('p');
 
 		p.innerText = `You previously had ${numItems} items in your cart`;
