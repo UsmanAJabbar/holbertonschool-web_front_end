@@ -81,7 +81,7 @@ showWelcomeMessageOrForm = () => {
 		let logout = document.createElement('a');
 		logout.innerHTML = '(logout)';
 		logout.href = '#';
-		logout.onclick = 'deleteCookiesAndShowForm()';
+		logout.onclick = () => { deleteCookiesAndShowForm() };
 		logout.style.color = 'black';
 		logout.style.fontWeight = 'normal';
 		logout.style.fontStyle = 'italic';
