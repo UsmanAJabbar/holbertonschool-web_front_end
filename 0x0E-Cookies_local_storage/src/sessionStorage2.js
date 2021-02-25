@@ -51,7 +51,7 @@ createStore = () => {
 	for (item of availableItems) {
 		let li = document.createElement('li');
 		li.innerText = item;
-		li.onclick = function() { addItemToCart(this.innerText) }
+		li.onclick = function() { addItemToCart(this.innerText), location.reload() }
 		ul.append(li);
 	}
 
@@ -113,7 +113,7 @@ updateCart = () => {
 
 				let removebtn = document.createElement('span');
 				removebtn.innerText = `(remove)`;
-				removebtn.onclick = function(e) { removeItemfromCart( productName )};
+				removebtn.onclick = function(e) { removeItemfromCart( productName ), location.reload() };
 
 				product.append(removebtn);
 
